@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Routes from "./config/routes";
 import UserContext from "./context/UserContext";
 import { logoutUser } from "./models/user";
-import Login from "./pages/Login";
+import "./App.css";
 
 function App(props) {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem("uid"));

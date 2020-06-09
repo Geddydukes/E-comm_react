@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { loginUser } from "../models/user";
+import UserContext from "../context/UserContext";
 
 const Login = (props) => {
   const [loginData, setLoginData] = useState({
@@ -8,8 +9,11 @@ const Login = (props) => {
     message: "",
   });
 
+  const { storeUser } = useContext(UserContext);
+
   const handleChange = (event) => {
     setLoginData({
+      ...loginData,
       [event.target.name]: event.target.value,
     });
   };
@@ -27,7 +31,7 @@ const Login = (props) => {
           });
           return false;
         }
-        props.storeUser(res.data);
+        storeUser(res.data);
         props.history.push("/");
       })
       .catch((err) => console.log(err));
@@ -44,7 +48,7 @@ const Login = (props) => {
             type="email"
             id="email"
             name="email"
-            // value={loginData.email}
+            value={loginData.email}
           />
         </div>
 
@@ -56,7 +60,7 @@ const Login = (props) => {
             type="password"
             id="password"
             name="password"
-            // value={loginData.password}
+            value={loginData.password}
           />
         </div>
         <button type="submit">Login</button>
