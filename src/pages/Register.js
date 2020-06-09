@@ -14,8 +14,13 @@ const Register = (props) => {
 
   const handleChange = (event) => {
     setUserData({
+      ...userData,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const adminAccess = () => {
+    setUserData({ code: "" });
   };
 
   const handleSubmit = (event) => {
@@ -88,7 +93,7 @@ const Register = (props) => {
             type="text"
             id="address"
             name="address"
-            value={userData.phoneNumber}
+            value={userData.address}
           />
         </div>
 
@@ -116,17 +121,13 @@ const Register = (props) => {
 
         <div className="radio">
           <label>
-            <input type="radio" value={userData.code} checked={true} />
+            <input type="radio" value={userData.code} />
             Customer
           </label>
         </div>
         <div className="radio">
           <label>
-            <input
-              type="radio"
-              value={userData.code}
-              checked={setUserData({ code: "" })}
-            />
+            <input type="radio" value={userData.code} onChange={adminAccess} />
             Admin
           </label>
         </div>

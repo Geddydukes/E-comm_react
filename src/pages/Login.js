@@ -1,15 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { loginUser } from "../models/user";
-import UserContext from "../context/UserContext";
 
-const Login = async (props) => {
+const Login = (props) => {
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
     message: "",
   });
-
-  const { storeUser } = useContext(UserContext);
 
   const handleChange = (event) => {
     setLoginData({
@@ -30,7 +27,7 @@ const Login = async (props) => {
           });
           return false;
         }
-        storeUser(res.data);
+        props.storeUser(res.data);
         props.history.push("/");
       })
       .catch((err) => console.log(err));
@@ -39,7 +36,6 @@ const Login = async (props) => {
   return (
     <div>
       <h4>Login</h4>
-      {loginData.message ? loginData.message : ""}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Email</label>
@@ -48,7 +44,7 @@ const Login = async (props) => {
             type="email"
             id="email"
             name="email"
-            value={loginData.email}
+            // value={loginData.email}
           />
         </div>
 
@@ -60,7 +56,7 @@ const Login = async (props) => {
             type="password"
             id="password"
             name="password"
-            value={loginData.password}
+            // value={loginData.password}
           />
         </div>
         <button type="submit">Login</button>

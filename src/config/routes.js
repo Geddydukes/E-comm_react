@@ -6,11 +6,24 @@ import Login from "../pages/Login";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register";
 
-export default (props) => (
+const Routes = (props) => (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route path="/login" component={Login} />
+    <Route
+      path="/login"
+      render={(routeProps) => {
+        return (
+          <Login
+            {...routeProps}
+            currentUser={props.currentUser}
+            storeUser={props.storeUser}
+          />
+        );
+      }}
+    />
     <Route path="/register" component={Register} />
     <Route path="/profile" component={Profile} />
   </Switch>
 );
+
+export default Routes;
