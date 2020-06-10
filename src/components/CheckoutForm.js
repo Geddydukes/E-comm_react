@@ -119,8 +119,6 @@ const CheckoutForm = () => {
     event.preventDefault();
 
     if (!stripe || !elements) {
-      // Stripe.js has not loaded yet. Make sure to disable
-      // form submission until Stripe.js has loaded.
       return;
     }
 
@@ -156,6 +154,9 @@ const CheckoutForm = () => {
       email: "",
       phone: "",
       name: "",
+      address: "",
+      city: "",
+      zip: "",
     });
   };
 
@@ -209,6 +210,42 @@ const CheckoutForm = () => {
             setBillingDetails({ ...billingDetails, phone: e.target.value });
           }}
         />
+        <Field
+          label="address"
+          id="address"
+          type="text"
+          placeholder="5555 Funtimes drive"
+          required
+          autoComplete="text"
+          value={billingDetails.address}
+          onChange={(e) => {
+            setBillingDetails({ ...billingDetails, address: e.target.value });
+          }}
+        />
+        <Field
+          label="city"
+          id="city"
+          type="text"
+          placeholder="Fun Place"
+          required
+          autoComplete="text"
+          value={billingDetails.city}
+          onChange={(e) => {
+            setBillingDetails({ ...billingDetails, city: e.target.value });
+          }}
+        />
+        <Field
+          label="zip"
+          id="zip"
+          type="number"
+          placeholder="55555"
+          required
+          autoComplete="number"
+          value={billingDetails.zip}
+          onChange={(e) => {
+            setBillingDetails({ ...billingDetails, zip: e.target.value });
+          }}
+        />
       </fieldset>
       <fieldset className="FormGroup">
         <CardField
@@ -220,7 +257,7 @@ const CheckoutForm = () => {
       </fieldset>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <SubmitButton processing={processing} error={error} disabled={!stripe}>
-        Pay $25
+        Pay
       </SubmitButton>
     </form>
   );
