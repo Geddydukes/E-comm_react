@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { loginUser } from "../models/user";
 import UserContext from "../context/UserContext";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const Login = (props) => {
   const [loginData, setLoginData] = useState({
@@ -32,28 +34,37 @@ const Login = (props) => {
           return false;
         }
         storeUser(res.data);
-        props.history.push("/");
       })
       .catch((err) => console.log(err));
+    props.history.push("/");
   };
 
   return (
     <div>
+      <br />
+      <br />
+      <br />
       <h4>Login</h4>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Email</label>
+      {loginData.message ? loginData.message : ""}
+
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
           <input
             onChange={handleChange}
+            className="form-control form-control-lg"
             type="email"
             id="email"
             name="email"
             value={loginData.email}
           />
-        </div>
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
 
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
           <input
             onChange={handleChange}
             className="form-control form-control-lg"
@@ -62,9 +73,11 @@ const Login = (props) => {
             name="password"
             value={loginData.password}
           />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </div>
   );
 };
