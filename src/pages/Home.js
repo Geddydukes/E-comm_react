@@ -1,11 +1,11 @@
 import React from "react";
 import "../App.css";
-import Checkout from "../components/CheckoutForm";
+import ImageUpload from "../components/ImageUpload";
 
 const Home = () => {
   return (
     <div className="Home">
-      <Checkout />
+      <ImageUpload />
     </div>
   );
 };

@@ -26,7 +26,7 @@ function App(props) {
 
   return (
     <UserContext.Provider value={{ currentUser, storeUser, logout }}>
-      <div>
+      <div className="appContainer">
         <Header />
         <Routes />
       </div>

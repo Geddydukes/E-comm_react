@@ -6,14 +6,18 @@
 body {
   background-color: rgb(216, 216, 216);
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100vw;
   display: flex;
   position: relative;
 }
 
+.appContainer {
+  width: 100vw;
+}
+
 .Home {
   width: 74%;
-  height: 70vh;
+  height: 100vh;
   background-color: goldenrod;
   text-align: center;
   align-self: center;

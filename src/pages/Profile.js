@@ -1,7 +1,12 @@
 import React from "react";
+import CheckoutButton from "../components/CheckoutButton";
 
 const Profile = () => {
-  return <div>profile</div>;
+  return (
+    <div>
+      <CheckoutButton />
+    </div>
+  );
 };
 
 export default Profile;
