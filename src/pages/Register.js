@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { createUser } from "../models/user";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const Register = (props) => {
   const [userData, setUserData] = useState({
@@ -17,10 +19,6 @@ const Register = (props) => {
       ...userData,
       [event.target.name]: event.target.value,
     });
-  };
-
-  const adminAccess = () => {
-    setUserData({ code: "" });
   };
 
   const handleSubmit = (event) => {
@@ -42,112 +40,92 @@ const Register = (props) => {
   return (
     <div>
       <h4>Register</h4>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="firstName">First Name</label>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formBasicName">
+          <Form.Label>First Name</Form.Label>
           <input
             onChange={handleChange}
+            className="form-control form-control-lg"
             type="text"
             id="firstName"
             name="firstName"
             value={userData.firstName}
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="lastName">Last Name</label>
+        </Form.Group>
+        <Form.Group controlId="formBasicName">
+          <Form.Label>Last Name</Form.Label>
           <input
             onChange={handleChange}
+            className="form-control form-control-lg"
             type="text"
             id="lastName"
             name="lastName"
             value={userData.lastName}
           />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
+        </Form.Group>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
           <input
             onChange={handleChange}
+            className="form-control form-control-lg"
             type="email"
             id="email"
             name="email"
             value={userData.email}
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="phoneNumber">Phone Number</label>
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+        <Form.Group controlId="formBasicPhone">
+          <Form.Label>Phone Number</Form.Label>
           <input
             onChange={handleChange}
+            className="form-control form-control-lg"
             type="tel"
             id="phoneNumber"
             name="phoneNumber"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             value={userData.phoneNumber}
           />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="address">Address</label>
+        </Form.Group>
+        <Form.Group controlId="formBasicName">
+          <Form.Label>Address</Form.Label>
           <input
             onChange={handleChange}
+            className="form-control form-control-lg"
             type="text"
             id="address"
             name="address"
             value={userData.address}
           />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
+        </Form.Group>
+        <Form.Group controlId="formBasicName">
+          <Form.Label>Password</Form.Label>
           <input
             onChange={handleChange}
+            className="form-control form-control-lg"
             type="password"
             id="password"
             name="password"
             value={userData.password}
           />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="password2">Confirm Password</label>
+        </Form.Group>
+        <Form.Group controlId="formBasicPhone">
+          <Form.Label>Confirm Password</Form.Label>
           <input
             onChange={handleChange}
+            className="form-control form-control-lg"
             type="password"
             id="password2"
             name="password2"
             value={userData.password2}
           />
-        </div>
-
-        <div className="radio">
-          <label>
-            <input type="radio" value={userData.code} />
-            Customer
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value={userData.code} onChange={adminAccess} />
-            Admin
-          </label>
-        </div>
-        {userData.code ? (
-          ""
-        ) : (
-          <div className="form-group">
-            <label htmlFor="code">Code</label>
-            <input
-              onChange={handleChange}
-              type="code"
-              id="code"
-              name="code"
-              value={userData.code}
-            />
-          </div>
-        )}
-
-        <button type="submit">Register</button>
-      </form>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </div>
   );
 };

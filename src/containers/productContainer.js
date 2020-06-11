@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 import { indexProducts } from "../models/product";
 import Product from "../components/Product";
 
@@ -18,15 +18,11 @@ const ProductContainer = () => {
   };
 
   let productList = products.map((product, index) => {
-    return (
-      <Link to={`/products/${product._id}`} key={index}>
-        <Product product={product} />
-      </Link>
-    );
+    return <Product product={product} index={index} />;
   });
 
   return (
-    <div>
+    <div className="productContainer">
       <h1>All Products</h1>
       {products ? productList : "Loading"}
     </div>

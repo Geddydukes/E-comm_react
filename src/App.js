@@ -8,6 +8,22 @@ import "./App.css";
 
 function App(props) {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem("uid"));
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item) => {
+    const myCart = [...cart];
+    myCart.push(item);
+    setCart(myCart);
+  };
+
+  const takeFromCart = (item) => {
+    console.log(item);
+    const goneItem = item;
+    const myItems = [...cart].filter((items) => {
+      return items.id !== goneItem.id;
+    });
+    setCart(myItems);
+  };
 
   const storeUser = (userId) => {
     setCurrentUser(userId);
@@ -25,7 +41,9 @@ function App(props) {
   };
 
   return (
-    <UserContext.Provider value={{ currentUser, storeUser, logout }}>
+    <UserContext.Provider
+      value={{ currentUser, storeUser, logout, cart, addToCart, takeFromCart }}
+    >
       <div className="appContainer">
         <Header />
         <Routes />

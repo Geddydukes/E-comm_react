@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../App.css";
 import ImageUpload from "../components/ImageUpload";
+import UserContext from "../context/UserContext";
 
 const Home = () => {
   return (
