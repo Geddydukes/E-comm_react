@@ -40,10 +40,7 @@ const Login = (props) => {
   };
 
   return (
-    <div>
-      <br />
-      <br />
-      <br />
+    <div className="loginForm">
       <h4>Login</h4>
       {loginData.message ? loginData.message : ""}
 

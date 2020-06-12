@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
   CardElement,
@@ -7,6 +7,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import "./checkout.scss";
+import UserContext from "../context/UserContext";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -114,6 +115,7 @@ const CheckoutForm = () => {
     phone: "",
     name: "",
   });
+  const { total } = useContext(UserContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -257,7 +259,7 @@ const CheckoutForm = () => {
       </fieldset>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <SubmitButton processing={processing} error={error} disabled={!stripe}>
-        Pay
+        Pay {total}
       </SubmitButton>
     </form>
   );

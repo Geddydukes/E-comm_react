@@ -38,7 +38,7 @@ const Register = (props) => {
     });
   };
   return (
-    <div>
+    <div className="loginForm">
       <h4>Register</h4>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicName">

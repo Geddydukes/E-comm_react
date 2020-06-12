@@ -3,11 +3,21 @@
   padding: 0;
 }
 
+html {
+  background: url("https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2017/11/04133712/waterfall.jpg")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
-  background-color: rgb(216, 216, 216);
+  background: url("https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2017/11/04133712/waterfall.jpg")
+    no-repeat center center fixed;
+  /* background-color: rgb(216, 216, 216); */
   min-height: 100vh;
   width: 100vw;
-  display: flex;
   position: relative;
 }
 
@@ -18,11 +28,38 @@ body {
 .Home {
   width: 74%;
   height: 100vh;
-  background-color: goldenrod;
+  border: 1px black solid;
   text-align: center;
   align-self: center;
   justify-content: center;
   align-items: center;
   display: flex;
   margin: 0 auto;
+  color: white;
+}
+
+.productContainer {
+  border: 1px black solid;
+  height: 100vh;
+  padding-right: 0;
+  margin: 0;
+  margin-top: 100px;
+  color: gray;
+  text-align: center;
+}
+
+.columnRow {
+  padding: 0;
+}
+
+.loginForm {
+  width: 80%;
+  height: 100vh;
+  text-align: center;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 150px;
+  color: white;
 }

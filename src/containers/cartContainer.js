@@ -1,33 +1,24 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import CheckoutButton from "../components/CheckoutButton";
 import UserContext from "../context/UserContext";
+import Cart from "../components/Cart";
 
 const CartContainer = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { cart } = useContext(UserContext);
-  const [total, setTotal] = useState(0);
-
-  // let Price = cart.map((product) => {
-  //   let runningTotal = total + product.price;
-  //   setTotal(runningTotal);
-  //   return <span>{total}</span>;
-  // });
+  const { cart, total } = useContext(UserContext);
 
   let MyCart = cart.map((product, index) => {
-    setTotal(total + product.price);
     return (
       <span>
-        <h5 key={index}>
-          {product.name}: {product.price}
-        </h5>
+        <Cart product={product} key={index} index={index} />
       </span>
     );
   });
   console.log(total);
   return (
-    <div>
+    <div className="productContainer">
+      <h1>Cart</h1>
       {cart ? MyCart : ""}
-      {total}
       <CheckoutButton />
     </div>
   );

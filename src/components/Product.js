@@ -6,13 +6,19 @@ import UserContext from "../context/UserContext";
 
 const Product = (props) => {
   const { addToCart } = useContext(UserContext);
-
+  console.log(props);
   return (
     <div>
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "12rem" }}>
         <Card.Img variant="top" src={props.product.image} alt={props.name} />
         <Card.Body>
-          <Link to={`/products/${props.product._id}`} key={props.index.index}>
+          <Link
+            to={{
+              pathname: `/products/${props.product._id}`,
+              state: { product: props.product },
+            }}
+            key={props.index.index}
+          >
             <Card.Title>{props.product.name}</Card.Title>
           </Link>
           <Card.Text>{props.product.description}</Card.Text>

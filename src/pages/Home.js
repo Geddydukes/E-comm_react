@@ -1,14 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../App.css";
 import ImageUpload from "../components/ImageUpload";
-import UserContext from "../context/UserContext";
 
 const Home = () => {
-  return (
-    <div className="Home">
-      <ImageUpload />
-    </div>
-  );
+  return <div className="Home">Home</div>;
 };
 
 export default Home;

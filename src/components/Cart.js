@@ -1,10 +1,20 @@
-import React from "react";
-import CheckoutButton from "./CheckoutButton";
+import React, { useContext } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import UserContext from "../context/UserContext";
 
-const Cart = () => {
+const Cart = (props) => {
+  console.log(props);
+  const { takeFromCart } = useContext(UserContext);
+
   return (
     <div>
-      <CheckoutButton />
+      <Card body>
+        {props.product.name}: {props.product.price}
+        <Button variant="danger" onClick={() => takeFromCart(props)}>
+          Remove
+        </Button>
+      </Card>
     </div>
   );
 };
