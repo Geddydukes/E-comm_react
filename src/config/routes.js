@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register";
 import ShopList from "../pages/ShopList";
+import ShopShow from "../pages/ShopShow";
 
 const Routes = (props) => (
   <Switch>
@@ -25,6 +26,7 @@ const Routes = (props) => (
     <Route path="/register" component={Register} />
     <Route path="/profile" component={Profile} />
     <Route path="/shop" component={ShopList} />
+    <Route path="/product/:id" component={ShopShow} />
   </Switch>
 );
 

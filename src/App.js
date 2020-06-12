@@ -31,9 +31,7 @@ function App(props) {
 
   const takeFromCart = (item) => {
     const goneItem = item;
-    console.log(item);
     const myItems = [...cart].filter((items, index) => {
-      console.log(index);
       return index !== goneItem.index;
     });
     setCart([...myItems]);

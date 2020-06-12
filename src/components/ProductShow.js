@@ -1,24 +1,17 @@
 import React, { useContext } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
 import UserContext from "../context/UserContext";
 
-const Product = (props) => {
+const ProductShow = (props) => {
   const { addToCart } = useContext(UserContext);
+
+  console.log(props.product.name);
   return (
-    <div>
-      <Card style={{ width: "12rem" }}>
+    <div className="productShow">
+      <Card>
         <Card.Body>
-          <Link
-            to={{
-              pathname: `/product/${props.product._id}`,
-              state: { product: props.product },
-            }}
-            key={props.index.index}
-          >
-            <Card.Title>{props.product.name}</Card.Title>
-          </Link>
+          <Card.Title>{props.product.name}</Card.Title>
           <Card.Text>{props.product.description}</Card.Text>
           <Card.Text>Price: {props.product.price}</Card.Text>
           <Button variant="primary" onClick={() => addToCart(props.product)}>
@@ -30,4 +23,4 @@ const Product = (props) => {
   );
 };
 
-export default Product;
+export default ProductShow;

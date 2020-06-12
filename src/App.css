@@ -63,3 +63,13 @@ body {
   margin-top: 150px;
   color: white;
 }
+
+.productShow {
+  width: 80%;
+  height: 100%;
+  margin: 5% auto;
+}
+
+.card-body {
+  min-height: 80%;
+}
