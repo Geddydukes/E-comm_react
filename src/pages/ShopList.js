@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import ProductContainer from "../containers/ProductContainer";
 import CartContainer from "../containers/CartContainer";
-import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 

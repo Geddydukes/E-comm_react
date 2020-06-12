@@ -5,10 +5,9 @@ import UserContext from "../context/UserContext";
 
 const ProductShow = (props) => {
   const { addToCart } = useContext(UserContext);
-
-  console.log(props.product.name);
   return (
     <div className="productShow">
+      <h1>{props.product.name}</h1>
       <Card>
         <Card.Body>
           <Card.Title>{props.product.name}</Card.Title>

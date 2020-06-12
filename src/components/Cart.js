@@ -4,11 +4,10 @@ import Button from "react-bootstrap/Button";
 import UserContext from "../context/UserContext";
 
 const Cart = (props) => {
-  console.log(props);
   const { takeFromCart } = useContext(UserContext);
 
   return (
-    <div>
+    <div className="productShow">
       <Card body>
         {props.product.name}: {props.product.price}
         <Button variant="danger" onClick={() => takeFromCart(props)}>

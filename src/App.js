@@ -5,7 +5,6 @@ import Routes from "./config/routes";
 import UserContext from "./context/UserContext";
 import { logoutUser } from "./models/user";
 import "./App.css";
-import Container from "react-bootstrap/Container";
 
 function App(props) {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem("uid"));

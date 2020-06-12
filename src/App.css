@@ -73,3 +73,6 @@ body {
 .card-body {
   min-height: 80%;
 }
+h1 {
+  color: white;
+}

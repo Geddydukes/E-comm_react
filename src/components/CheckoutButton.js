@@ -11,7 +11,7 @@ function CheckoutButton() {
   return (
     <>
       <Button variant="primary" onClick={() => setShow(true)} fixed="bottom">
-        Checkout {total}
+        Checkout ${total}
       </Button>
 
       <Modal
@@ -21,7 +21,7 @@ function CheckoutButton() {
         aria-labelledby="checkout"
       >
         <Modal.Header closeButton>
-          <Modal.Title id="checkout">Checkout {total} </Modal.Title>
+          <Modal.Title id="checkout">Checkout $ {total} </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Checkout />

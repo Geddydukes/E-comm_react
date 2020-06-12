@@ -5,7 +5,7 @@ import Cart from "../components/Cart";
 
 const CartContainer = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { cart, total } = useContext(UserContext);
+  const { cart } = useContext(UserContext);
 
   let MyCart = cart.map((product, index) => {
     return (
@@ -14,7 +14,6 @@ const CartContainer = () => {
       </span>
     );
   });
-  console.log(total);
   return (
     <div className="productContainer">
       <h1>Cart</h1>
