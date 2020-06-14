@@ -7,7 +7,7 @@ const Cart = (props) => {
   const { takeFromCart } = useContext(UserContext);
 
   return (
-    <div className="productShow">
+    <div>
       <Card body>
         {props.product.name}: {props.product.price}
         <Button variant="danger" onClick={() => takeFromCart(props)}>

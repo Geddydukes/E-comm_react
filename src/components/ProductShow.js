@@ -7,7 +7,6 @@ const ProductShow = (props) => {
   const { addToCart } = useContext(UserContext);
   return (
     <div className="productShow">
-      <h1>{props.product.name}</h1>
       <Card>
         <Card.Body>
           <Card.Title>{props.product.name}</Card.Title>
