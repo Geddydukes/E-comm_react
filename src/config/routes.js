@@ -7,6 +7,8 @@ import Profile from "../pages/Profile";
 import Register from "../pages/Register";
 import ShopList from "../pages/ShopList";
 import ShopShow from "../pages/ShopShow";
+import About from "../pages/About";
+import Mission from "../pages/Mission";
 
 const Routes = (props) => (
   <Switch>
@@ -27,6 +29,8 @@ const Routes = (props) => (
     <Route path="/profile" component={Profile} />
     <Route path="/shop" component={ShopList} />
     <Route path="/product/:id" component={ShopShow} />
+    <Route path="/about" component={About} />
+    <Route path="/mission" component={Mission} />
   </Switch>
 );
 
