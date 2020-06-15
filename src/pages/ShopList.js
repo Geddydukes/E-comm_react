@@ -1,5 +1,5 @@
 import React from "react";
-import ProductContainer from "../containers/ProductContainer";
+import ProductContainer from "../containers/productContainer";
 import CartContainer from "../containers/CartContainer";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";

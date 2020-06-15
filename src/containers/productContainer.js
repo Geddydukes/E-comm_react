@@ -4,10 +4,8 @@ import Product from "../components/Product";
 import CardDeck from "react-bootstrap/CardDeck";
 
 const ProductContainer = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [products, setProducts] = useState([]);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     grabProducts();
   }, []);
