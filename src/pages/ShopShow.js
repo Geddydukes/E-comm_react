@@ -1,6 +1,6 @@
 import React from "react";
 import ProductShowContainer from "../containers/ProductShowContainer";
-import CartContainer from "../containers/CartContainer";
+import CartContainer from "../containers/cartContainer";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
